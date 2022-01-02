@@ -1,11 +1,19 @@
 package br.com.zup.userdept.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tb_usuario")
 public class Usuario {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "departamento_id")
     private Departamento departamento;
 
     public Usuario() {
