@@ -1,4 +1,7 @@
 package br.com.zup.userdept.repository;
 
-public class UserRepository {
+import br.com.zup.userdept.entities.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<Usuario, Long > {
 }
